@@ -30,7 +30,7 @@ class ProjectController extends Controller
         // persist
         Project::create(request(['title', 'description']));
         // redirect
-        return redirect('/projects');
+        return redirect('/project');
     }
 
     /**

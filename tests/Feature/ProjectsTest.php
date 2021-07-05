@@ -16,13 +16,13 @@ class ProjectsTest extends TestCase
         $this->withoutExceptionHandling();
         $attributes = [
             'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph
+            'description' => $this->faker->para
         ];
-        $this->post('/projects', $attributes)->assertRedirect('/projects');
+        $this->post('/project', $attributes)->assertRedirect('/project');
 
         $this->assertDatabaseHas('projects', $attributes);
 
-        $this->get('/projects')->assertSee($attributes['title']);
+        $this->get('/project')->assertSee($attributes['title']);
     }
 
     /**
